@@ -11,18 +11,24 @@ var killerPerk = function(){
 	return kPerks[Math.floor(Math.random() * kPerks.length)];
 };
 
+var killerPick = function(){
+	return killer[Math.floor(Math.random() * killer.length)]
+};
+
 function generate(callback){
 	table.innerHTML = "";
 	players[0] = {first:survivorPerk(), second:survivorPerk(), third:survivorPerk(), fourth:survivorPerk()};
 	players[1] = {first:survivorPerk(), second:survivorPerk(), third:survivorPerk(), fourth:survivorPerk()};
 	players[2] = {first:survivorPerk(), second:survivorPerk(), third:survivorPerk(), fourth:survivorPerk()};
 	players[3] = {first:survivorPerk(), second:survivorPerk(), third:survivorPerk(), fourth:survivorPerk()};
-	players[4] = {first:killerPerk(), second:killerPerk(), third:killerPerk(), fourth:killerPerk()};
+    players[4] = {first:killerPerk(), second:killerPerk(), third:killerPerk(), fourth:killerPerk()};
+	players[5] = {first:killerPick(), second:killerPick()};
 	console.log(players[0].first);
-	for(i=0;i<5;i++){
+	for(var i=0;i<5;i++){
 		var p = players[i];
 		callback(p, generateTable);
 	}
+    createKillerTr(players[5], generateTable);
 }
 
 function createTr(p, callback){
@@ -42,6 +48,17 @@ function createTr(p, callback){
 	tr.appendChild(perk4);
 
 	callback(tr);
+}
+
+function createKillerTr(k, callback){
+    var tr = document.createElement("tr");
+    var td1 = document.createElement("td");
+    var td2 = document.createElement("td");
+    td1.innerText = k.first;
+    td2.innerText = k.second;
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    callback(tr);
 }
 
 function generateTable(tr){
