@@ -7,12 +7,23 @@
 </head>
 
 <body>
-	<div>
-		<p>Click the button to generate a board!</p><button onclick="generate(createTr)">Click me!</button>
+    <div id="header">
+        <h1>Dead by Daylight Randomizer</h1>
+    </div>
+
+	<div id="body">
+        <div class="center">
+            <p id="clickText">Click the button to generate a board!</p>
+            <button id="clickMe" onclick="generate(createTr)">Click me!</button>
+        </div>
+
+        <div class="center">
+            <table id="table"></table>
+        </div>
 	</div>
-	<br /><br />
-	<table id="table"></table>
+	<div id="footer">
+        <p><br>Background image from <a href="https://deadbydaylight.gamepedia.com/Dead_by_Daylight_Wiki">official wiki</a></p>
+    </div>
 	<script src="script.js" type="text/javascript"></script>
 </body>
-
 </html>

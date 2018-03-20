@@ -61,4 +61,5 @@ function createTr(p, callback){
 //Adds a table row to the table on index.html
 function generateTable(tr){
 	table.appendChild(tr);
+	document.getElementById("clickText").innerText = "Click the button to generate another board!";
 }
