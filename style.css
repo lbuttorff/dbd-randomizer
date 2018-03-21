@@ -20,6 +20,8 @@ tr, td {
 	border: 1px solid grey;
     color: #63ccff;
     background-color: #1a1a1a;
+    font-family: 'Roboto',sans-serif;
+    font-size: small;
 }
 p {
     color: lightgrey;
