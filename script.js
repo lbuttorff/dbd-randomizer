@@ -39,7 +39,7 @@ function generate(callback){
     }
     players[4] = {char:killerPick(), first:killerPerk(), second:killerPerk(), third:killerPerk(), fourth:killerPerk()};
 	//console.log(players[0].first);
-	for(var i=0;i<5;i++){
+	for(i=0;i<5;i++){
 		var p = players[i];
 		callback(p, generateTable);
 	}
