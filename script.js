@@ -6,8 +6,8 @@ var killer = ["Trapper","Wraith","Hillbilly","Nurse","Shape","Hag","Doctor","Hun
 //The table in index.html
 var table = document.getElementById("table");
 //Function to randomly select a survivor perk from the sPerks array
-var survivorPerk = function(){
-	return sPerks[Math.floor(Math.random() * sPerks.length)];
+var survivorPerk = function(perks){
+	return perks[Math.floor(Math.random() * perks.length)];
 };
 //Function to randomly select a killer perk from the kPerks array
 var killerPerk = function(){
@@ -25,10 +25,18 @@ var survivorPick = function(){
 function generate(callback){
 	table.innerHTML = "";
     var players = [];
-    players[0] = {char:survivorPick(), first:survivorPerk(), second:survivorPerk(), third:survivorPerk(), fourth:survivorPerk()};
-	players[1] = {char:survivorPick(), first:survivorPerk(), second:survivorPerk(), third:survivorPerk(), fourth:survivorPerk()};
-	players[2] = {char:survivorPick(), first:survivorPerk(), second:survivorPerk(), third:survivorPerk(), fourth:survivorPerk()};
-	players[3] = {char:survivorPick(), first:survivorPerk(), second:survivorPerk(), third:survivorPerk(), fourth:survivorPerk()};
+    for(var i=0;i<4;i++){
+        var temp = sPerks;
+        var p1 = survivorPerk(temp);
+        temp.splice(temp.indexOf(p1), 1);
+        var p2 = survivorPerk(temp);
+        temp.splice(temp.indexOf(p2), 1);
+        var p3 = survivorPerk(temp);
+        temp.splice(temp.indexOf(p3), 1);
+        var p4 = survivorPerk(temp);
+        players[i] = {char:survivorPick(), first:p1, second:p2, third:p3, fourth:p4};
+        temp = [];
+    }
     players[4] = {char:killerPick(), first:killerPerk(), second:killerPerk(), third:killerPerk(), fourth:killerPerk()};
 	//console.log(players[0].first);
 	for(var i=0;i<5;i++){
