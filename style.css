@@ -31,6 +31,9 @@ h1 {
     padding-left: 20px;
     color: #f2f2f2;
 }
+a {
+    color: deepskyblue;
+}
 #body {
     width: 90%;
     padding: 5%;
