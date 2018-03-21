@@ -21,23 +21,32 @@ var killerPick = function(){
 var survivorPick = function(){
     return survivor[Math.floor(Math.random() * survivor.length)];
 };
+var createPlayer = function(charF, perkF, array){
+    var temp = array.slice();
+    var player = {
+        char:charF(),
+        first:"",
+        second:"",
+        third:"",
+        fourth:""
+    };
+    player.first = perkF(temp);
+    temp.splice(temp.indexOf(player.first), 1);
+    player.second = perkF(temp);
+    temp.splice(temp.indexOf(player.second), 1);
+    player.third = perkF(temp);
+    temp.splice(temp.indexOf(player.third), 1);
+    player.fourth = perkF(temp);
+    return player;
+};
 //Called by the button on index.html, begins generation of a game board
 function generate(callback){
 	table.innerHTML = "";
     var players = [];
     for(var i=0;i<4;i++){
-        var temp = sPerks;
-        var p1 = survivorPerk(temp);
-        temp.splice(temp.indexOf(p1), 1);
-        var p2 = survivorPerk(temp);
-        temp.splice(temp.indexOf(p2), 1);
-        var p3 = survivorPerk(temp);
-        temp.splice(temp.indexOf(p3), 1);
-        var p4 = survivorPerk(temp);
-        players[i] = {char:survivorPick(), first:p1, second:p2, third:p3, fourth:p4};
-        temp = [];
+        players[i] = createPlayer(survivorPick, survivorPerk, sPerks);
     }
-    players[4] = {char:killerPick(), first:killerPerk(), second:killerPerk(), third:killerPerk(), fourth:killerPerk()};
+    players[4] = createPlayer(killerPick, killerPerk, kPerks);
 	//console.log(players[0].first);
 	for(i=0;i<5;i++){
 		var p = players[i];
