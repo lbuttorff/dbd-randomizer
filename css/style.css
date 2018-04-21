@@ -2,7 +2,7 @@ body {
     margin:0;
     padding:0;
     height:100%;
-	background-image: url("dbd-lobby-background.jpg");
+	background-image: url("../assets/dbd-lobby-background.jpg");
 }
 button {
 	width:100px;
@@ -14,7 +14,7 @@ table {
     margin: auto;
 	border-collapse: collapse;
 }
-tr, td {
+tr, td, th {
 	text-align: left;
 	padding: 8px;
 	border: 1px solid grey;
@@ -23,6 +23,9 @@ tr, td {
     font-family: 'Roboto',sans-serif;
     font-size: medium;
     opacity: 0.9;
+}
+th {
+    color: white;
 }
 p {
     color: lightgrey;
