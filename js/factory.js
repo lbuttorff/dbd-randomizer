@@ -6,7 +6,8 @@ function survivorPerks(){
         "Object of Obsession","Open Handed","Pharmacy","Plunderer's Instinct","Premonition","Prove Thyself",
         "Quick & Quiet","Resilience","Saboteur","Self-Care","Slippery Meat","Small Game","Sole Survivor","Spine Chill",
         "Sprint Burst","Stake Out","Streetwise","This Is Not Happening","Technician","Tenacity","Up The Ante",
-        "Unbreakable","Urban Evasion","Vigil","Wake Up","We'll Make It","We're Gonna Live Forever"
+        "Unbreakable","Urban Evasion","Vigil","Wake Up","We'll Make It","We're Gonna Live Forever","Dance With Me",
+        "Windows Of Opportunity","Boil Over"
     ];
 }
 //Returns an array of killer perks
@@ -18,24 +19,24 @@ function killerPerks(){
         "Make Your Choice","Monitor & Abuse","Monstrous Shrine","Overcharge","Overwhelming Presence","Remember Me",
         "Play With Your Food","Predator","Save The Best For Last","Shadowborn","Sloppy Butcher",
         "Spies From The Shadows","Stridor","Surveilance","Terrtorial Imperative","Tinkerer","Thanatophobia",
-        "Unnerving Presence","Unrelenting","Whispers"
+        "Unnerving Presence","Unrelenting","Whispers","Bamboozle","Coulrophobia","Pop Goes The Weasel"
     ];
 }
 //Returns a list of survivors
 function survivorList() {
     return ["Dwight Fairfield","Meg Thomas","Claudette Morel","Jake Park","Nea Karlsson","Laurie Strode",
-        "Ace Visconti","Bill Overbeck","Feng Min","David King","Quentin Smith","David Tapp"
+        "Ace Visconti","Bill Overbeck","Feng Min","David King","Quentin Smith","David Tapp","Kate Denson"
     ];
 }
 //Returns a list of killers
 function killerList(){
-    return ["Trapper","Wraith","Hillbilly","Nurse","Shape","Hag","Doctor","Huntress","Cannibal","Nightmare","Pig"];
+    return ["Trapper","Wraith","Hillbilly","Nurse","Shape","Hag","Doctor","Huntress","Cannibal","Nightmare","Pig","Clown"];
 }
 //Returns a list of maps
 function mapList(){
     return ["Coal Tower","Groaning Storehouse","Ironworks of Misery","Shelter Woods","Suffocation Pit",
         "Azarov's Resting Place","Blood Lodge","Gas Heaven","Wretched Shop","Wrecker's Yard","Fractured Cowshed",
-        "The Thompson House","Torment Creek","Rancid Abattoir","Rotten Fields","Disturbed Ward","Lampkin Lane",
+        "The Thompson House","Torment Creek","Rancid Abattoir","Rotten Fields","Disturbed Ward","Father Campbell's Chapel","Lampkin Lane",
         "The Pale Rose","Grim Pantry","Treatment Theatre","Mother's Dwelling","Badham Preschool","The Game"
     ];
 }
